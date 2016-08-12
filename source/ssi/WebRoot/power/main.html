@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript"
+	src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<link type="text/css" rel="stylesheet" href="/css/all.css">
+<link type="text/css" rel="stylesheet" href="/css/suspend.css">
+<link type="text/css" rel="stylesheet" href="/css/main.css">
+<script src="/js/echarts.min.js"></script>
+<script src="/js/layer.js"></script>
+<script src="/js/jquery.suspend.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$(".biaoji_img_div").suspend({
+			maxHeight:400,
+			callBack:function(dom,$suspend){
+				$suspend.append("<img height='100%' src='"+dom.children('img').attr("src")+"'/>")
+			}
+		});
+		$(".shoud_bianda_img").suspend({
+			maxHeight:400,
+			callBack:function(dom,$suspend){
+				$suspend.append("<img height='100%' src='"+dom.attr("src")+"'/>")
+			}
+		});
+		
+		
+	})
+</script>
+<script type="text/javascript">
+</script>
+<title>&lt;lian&gt; —— 从这开始</title>
+<style type="text/css">body{
+	background-image: url("/images/bg-new.jpg");
+}</style>
+</head>
+<body>
+	<!-- header -->
+	
+	<div class="main_header_div">
+		<div class="main_header_mid_div">
+			<div class="main_logo_div">&nbsp;&lt;lian&gt;</div>
+			<div class="main_desc_div">
+				<span>—— 从这开始</span>
+			</div>
+			<div class="main_bao_search_div">
+				<div class="main_search_div">
+					<input type="text" placeholder="搜索你感兴趣的内容和人..."> <input
+						type="submit" value="">
+				</div>
+			</div>
+
+			<div class="main_message_div">
+				<img class="shoud_bianda_img" src="/images/head.jpg" width="24px" height="24px"
+					style="float: left;"/> 
+					
+					<span class="main_username_span">小王家的小小狗</span><i
+					class="c-icon"></i>
+			</div>
+			<span id="tuichu_span"
+				style="padding-left: 12px; font-size: 10px; display: inline-block; color: #CCCCCC; margin-top: 18px;">退出登录</span>
+		</div>
+	</div>
+<!-- 	<div class="back_div">
+		<div class="back_down_div"></div>
+	</div> -->
+	<!-- header end -->
+	<div class="main_warp">
+		
+		<div id="main"
+			style="width: 1080px; height: 680px; margin: 0 auto; margin-top: 50px; background: black"></div>
+		<div class="some_neirong_div">
+			<span class="main_title_span">最新内容</span>
+			<div class="main_some_list_div">
+				<img class="shoud_bianda_img" src="/images/head.jpg" width="45px" height="45px" style="position: relative;top:15px"/>
+				
+				<span class="main_user_nick_span"><u>阿斯顿马丁</u></span><span style="margin-left: 15px;">发表了文章</span><span class="main_wenzhang_title_span"><u>pokemon go 皮卡丘教程</u></span>
+				<div class="main_jianjie_desc_div">如果 theFlooble 引用不是 volatile 类型，doWork() 中的代码在解除对 theFlooble 的引用时，将会得到一个不完全构造的 Flooble。
+该模式的一个必要条件是：被发布的对象必须是线程安全的，或者是有效的不可变对象（有效不可变意味着对象的状态在发布之后永远不会被修改）。volatile 类型的引用可以确保对象的发布形式的可见性，但是如果对象的状态在发布后将发生更改，那么就需要额外的同步。
+模式 #3：独立观察（independent observation）
+安全使用 volatile 的另一种简单模式是：定期 “发布” 观察结果供程序内部使用。例如，假设有一种环境传感器能够感觉环境温度。一个后台线程可能会每隔几秒读取一次该传感器，并更新包含当前文档的 volatile 变量。然后，其他线程可以读取这个变量，从而随时能够看到最新的温度值。
+使用该模式的另一种应用程序就是收集程序的统计信息。清单 4 展示了身份验证机制如何记忆最近一次登录的用户的名字。将反复使用 lastUser 引用来发布值，以供程序的其他部分使用。
+				</div>
+				<br/>
+				<span class="main_yuedugengduo_span"><u>阅读更多</u></span>
+			</div>
+			
+			<div class="main_some_list_div">
+				<img class="shoud_bianda_img" src="/images/head.jpg" width="45px" height="45px" style="position: relative;top:15px"/>
+				
+				<span class="main_user_nick_span"><u>阿斯顿马丁</u></span><span style="margin-left: 15px;">发表了文章</span><span class="main_wenzhang_title_span"><u>pokemon go 皮卡丘教程</u></span>
+				<div class="main_jianjie_desc_div">如果 theFlooble 引用不是 volatile 类型，doWork() 中的代码在解除对 theFlooble 的引用时，将会得到一个不完全构造的 Flooble。
+该模式的一个必要条件是：被发布的对象必须是线程安全的，或者是有效的不可变对象（有效不可变意味着对象的状态在发布之后永远不会被修改）。volatile 类型的引用可以确保对象的发布形式的可见性，但是如果对象的状态在发布后将发生更改，那么就需要额外的同步。
+模式 #3：独立观察（independent observation）
+安全使用 volatile 的另一种简单模式是：定期 “发布” 观察结果供程序内部使用。例如，假设有一种环境传感器能够感觉环境温度。一个后台线程可能会每隔几秒读取一次该传感器，并更新包含当前文档的 volatile 变量。然后，其他线程可以读取这个变量，从而随时能够看到最新的温度值。
+使用该模式的另一种应用程序就是收集程序的统计信息。清单 4 展示了身份验证机制如何记忆最近一次登录的用户的名字。将反复使用 lastUser 引用来发布值，以供程序的其他部分使用。
+				</div>
+				<br/>
+				<span class="main_yuedugengduo_span"><u>阅读更多</u></span>
+			</div>
+			<div class="main_some_list_div">
+				<img  class="shoud_bianda_img" src="/images/head.jpg" width="45px" height="45px" style="position: relative;top:15px"/>
+				
+				<span class="main_user_nick_span"><u>阿斯顿马丁</u></span><span style="margin-left: 15px;">发表了文章</span><span class="main_wenzhang_title_span"><u>pokemon go 皮卡丘教程</u></span>
+				<div class="main_jianjie_desc_div">如果 theFlooble 引用不是 volatile 类型，doWork() 中的代码在解除对 theFlooble 的引用时，将会得到一个不完全构造的 Flooble。
+该模式的一个必要条件是：被发布的对象必须是线程安全的，或者是有效的不可变对象（有效不可变意味着对象的状态在发布之后永远不会被修改）。volatile 类型的引用可以确保对象的发布形式的可见性，但是如果对象的状态在发布后将发生更改，那么就需要额外的同步。
+模式 #3：独立观察（independent observation）
+安全使用 volatile 的另一种简单模式是：定期 “发布” 观察结果供程序内部使用。例如，假设有一种环境传感器能够感觉环境温度。一个后台线程可能会每隔几秒读取一次该传感器，并更新包含当前文档的 volatile 变量。然后，其他线程可以读取这个变量，从而随时能够看到最新的温度值。
+使用该模式的另一种应用程序就是收集程序的统计信息。清单 4 展示了身份验证机制如何记忆最近一次登录的用户的名字。将反复使用 lastUser 引用来发布值，以供程序的其他部分使用。
+				</div>
+				<br/>
+				<span class="main_yuedugengduo_span"><u>阅读更多</u></span>
+			</div>
+			<div class="main_some_list_div">
+				<img  src="/images/head.jpg" width="45px" height="45px" style="position: relative;top:15px"/>
+				
+				<span class="main_user_nick_span"><u>阿斯顿马丁</u></span><span style="margin-left: 15px;">发表了文章</span><span class="main_wenzhang_title_span"><u>pokemon go 皮卡丘教程</u></span>
+				<div class="main_jianjie_desc_div">如果 theFlooble 引用不是 volatile 类型，doWork() 中的代码在解除对 theFlooble 的引用时，将会得到一个不完全构造的 Flooble。
+该模式的一个必要条件是：被发布的对象必须是线程安全的，或者是有效的不可变对象（有效不可变意味着对象的状态在发布之后永远不会被修改）。volatile 类型的引用可以确保对象的发布形式的可见性，但是如果对象的状态在发布后将发生更改，那么就需要额外的同步。
+模式 #3：独立观察（independent observation）
+安全使用 volatile 的另一种简单模式是：定期 “发布” 观察结果供程序内部使用。例如，假设有一种环境传感器能够感觉环境温度。一个后台线程可能会每隔几秒读取一次该传感器，并更新包含当前文档的 volatile 变量。然后，其他线程可以读取这个变量，从而随时能够看到最新的温度值。
+使用该模式的另一种应用程序就是收集程序的统计信息。清单 4 展示了身份验证机制如何记忆最近一次登录的用户的名字。将反复使用 lastUser 引用来发布值，以供程序的其他部分使用。
+				</div>
+				<br/>
+				<span class="main_yuedugengduo_span"><u>阅读更多</u></span>
+			</div>
+		</div>
+		<div class="some_neirong_div">
+			<span class="main_title_span">一些图片</span>
+			<div class="main_some_list_div">
+				<div class="neibu_main_div biaoji_img_div"><img  src="/images/img4.png" height="100%"/></div>
+				<div class="neibu_main_div biaoji_img_div"><img  src="/images/img1.jpg" height="100%"/></div>
+				<div class="neibu_main_div biaoji_img_div"><img  src="/images/img2.jpg" height="100%"/></div>
+				<div class="neibu_main_div biaoji_img_div"><img  src="/images/img3.jpg" height="100%"/></div>
+				<div style="clear:both;width:0;height:0;margin:0;padding:0;overfloat:hidden;"></div>
+				<br/>
+				<span class="main_yuedugengduo_span"><u>阅读更多</u></span>
+			</div>
+		</div>
+		<div class="some_neirong_div">
+			<span class="main_title_span">一些活跃的人</span>
+			<div class="main_some_list_div">
+				<table>
+					<tr>
+						<td class="tr_td_1"><div><img src="/images/head.jpg" ></div></td>
+						<td class="tr_td_1"><div><img src="/images/head.jpg" ></div></td>
+						<td class="tr_td_1"><div><img src="/images/head.jpg" ></div></td>
+						<td class="tr_td_1"><div><img src="/images/head.jpg" ></div></td>
+						<td class="tr_td_1"><div><img src="/images/head.jpg" ></div></td>
+					</tr>
+					<tr>
+						<td class="tr_td_2"><span class="user_name_td_span"><u>哥斯达黎加小怪兽s</u></span></td>
+						<td class="tr_td_2"><span class="user_name_td_span"><u>哥斯达黎加1231231231233333333123小怪兽s</u></span></td>
+						<td class="tr_td_2"><span class="user_name_td_span"><u>哥斯达黎加1231231231233333333123小怪兽s</u></span></td>
+						<td class="tr_td_2"><span class="user_name_td_span"><u>哥斯达黎加1231231231233333333123小怪兽s</u></span></td>
+						<td class="tr_td_2"><span class="user_name_td_span"><u>哥斯达黎加1231231231233333333123小怪兽s</u></span></td>
+					</tr>
+					<tr>
+						<td class="tr_td_2"><span class="guanzhu_span"><u>关注TA</u></span></td>
+						<td class="tr_td_2"><span class="guanzhu_span"><u>关注TA</u></span></td>
+						<td class="tr_td_2"><span class="guanzhu_span"><u>关注TA</u></span></td>
+						<td class="tr_td_2"><span class="guanzhu_span"><u>关注TA</u></span></td>
+						<td class="tr_td_2"><span class="guanzhu_span"><u>关注TA</u></span></td>
+					</tr>
+				</table>
+				<span class="main_yuedugengduo_span"><u>寻找更多</u></span>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		// 基于准备好的dom，初始化echarts实例
+		var myChart = echarts.init(document.getElementById('main'));
+		myChart.showLoading();
+		
+		// 指定图表的配置项和数据
+		var option = {
+			//backgroundColor: '#ADADAD',
+			tooltip: {},
+			title : {
+				text : '链接生活',
+			},
+			series : [ {
+				type : 'graph',
+				textStyle:{
+					color:'#000000'
+				},
+				layout:'circular',
+				symbolSize : 80,
+				layout : 'force',
+				
+				data : [ {
+					symbol:"image:///images/emoji/emoji1.png",
+					symbolSize : 80,
+					name : '周三',
+					value : 10,
+					category:1,
+					label : {
+						normal : {
+							show : true,
+							position : 'bottom',
+							textStyle:{
+								color:'#000',
+								fontWeight:'bold',
+								fontSize:16
+							}
+						}
+					},
+				}, {
+					symbol:"image:///images/emoji/emoji2.png",
+					name : '早饭吃的什么呢',
+					value : 10,
+					category:20,
+					label : {
+						normal : {
+							show : true,
+							position : 'bottom',
+							textStyle:{
+								color:'#000',
+								fontWeight:'bold',
+								fontSize:16
+							}
+						}
+					},
+				}, {
+					symbol:"image:///images/emoji/emoji3.png",
+					name : '上午没干什么',
+					value : 10,
+					label : {
+						normal : {
+							show : true,
+							position : 'bottom',
+							textStyle:{
+								color:'#000',
+								fontWeight:'bold',
+								fontSize:16
+							}
+						}
+					},
+				} ,{
+					symbol:"image:///images/emoji/emoji4.png",
+					name : '中午吃的汤',
+					value : 10,
+					label : {
+						normal : {
+							show : true,
+							position : 'bottom',
+							textStyle:{
+								color:'#000',
+								fontWeight:'bold',
+								fontSize:16
+							}
+						}
+					},
+				},{
+					symbol:"image:///images/emoji/emoji5.png",
+					name : '下午唔知道干什么吗',
+					value : 10,
+					label : {
+						normal : {
+							show : true,
+							position : 'bottom',
+							textStyle:{
+								color:'#000',
+								fontWeight:'bold',
+								fontSize:16
+							}
+						}
+					},
+				},{
+					symbol:"image:///images/emoji/emoji6.png",
+					name : '周六-开开心心的打球',
+					value : 10,
+					label : {
+						normal : {
+							show : true,
+							position : 'bottom',
+							textStyle:{
+								color:'#000',
+								fontWeight:'bold',
+								fontSize:16
+							}
+							
+						}
+					},
+				},{
+					symbol:"image:///images/emoji/emoji7.png",
+					name : '周日',
+					value : 20,
+					label : {
+						normal : {
+							show : true,
+							position : 'bottom',
+							textStyle:{
+								color:'#000',
+								fontWeight:'bold',
+								fontSize:16
+							}
+						}
+					},
+				}],
+				links : [ {
+					source : 0,
+					target : 1
+				}, {
+					source : 2,
+					target : 0
+				},{
+					source : 3,
+					target : 0
+				},{
+					source : 4,
+					target : 0
+				},{
+					source : 5,
+					target : 0
+				},{
+					source : 6,
+					target : 0
+				}  ],
+				roam : true,
+				lineStyle: {
+	                normal: {
+	                    opacity: 0.9,
+	                    width: 5,
+	                    curveness: 0
+	                }
+	            },
+				label : {
+					normal : {
+						position : 'right'
+					}
+				},
+				force : {
+					gravity:0.05,
+					repulsion : 800,
+					edgeLength : 300
+				},
+			} ]
+		};
+		// 使用刚指定的配置项和数据显示图表。
+		myChart.hideLoading();
+		myChart.setOption(option);
+		myChart.on("click",function(params){
+			if(params.dataType=="edge")return ;
+			console.log(params);
+			layer.open({
+				  type: 1,
+				  title: false,
+				  closeBtn: 0,
+				  shadeClose: true,
+				  skin: 'yourclass',
+				  content: '<div id="lian_tanchu_div"><div class="lian_tanchu_emoji_div"><img src="/images/emoji/emoji10.png" width="100%"></div><p class="lian_tanchu_title_p">今天吃了霸丸拉面<span class="bianqian_span">便签</span></p><table class="button_table">	<tr><td style="background-color: #72DAFF">查看</td><td style="background-color: #67C0FC">编辑</td></tr><tr><td style="background-color: #44B3FD">增加节点</td><td style="background-color: #1198F2">隐藏</td></table></div>'
+				});
+		});
+	</script>
+</body>
+</html>

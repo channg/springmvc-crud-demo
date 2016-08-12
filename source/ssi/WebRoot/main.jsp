@@ -1,0 +1,166 @@
+
+<%@ page language="java" contentType="text/html;charset=utf-8"%>  
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript"
+	src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<link type="text/css" rel="stylesheet" href="/css/all.css">
+<script src="/js/echarts.min.js"></script>
+<title>&lt;lian&gt; —— 从这开始</title>
+</head>
+<body>
+	<div class="main_header_div">
+		<div class="main_header_mid_div">
+			<div class="main_logo_div">&nbsp;&lt;lian&gt;</div>
+			<div class="main_desc_div">
+				<span>—— 从这开始</span>
+			</div>
+			<div class="main_bao_search_div">
+				<div class="main_search_div">
+					<input type="text" placeholder="搜索你感兴趣的内容和人..."> <input
+						type="submit" value="">
+				</div>
+			</div>
+
+			<div class="main_message_div">
+				<img src="/images/head.jpg" width="24px" height="24px"
+					style="float: left;"> <span class="main_username_span">小王家的小小狗</span><i
+					class="c-icon"></i>
+			</div>
+			<span
+				style="padding-left: 12px; font-size: 10px; display: inline-block; color: #CCCCCC; margin-top: 18px;">退出登录</span>
+		</div>
+	</div>
+	<div id="main"
+		style="width: 1080px; height: 680px; margin: 0 auto; margin-top: 50px; background: black"></div>
+	<script type="text/javascript">
+		// 基于准备好的dom，初始化echarts实例
+		var myChart = echarts.init(document.getElementById('main'));
+		myChart.showLoading();
+		
+		// 指定图表的配置项和数据
+		var option = {
+			tooltip: {},
+			title : {
+				text : '链接世界',
+			},
+			series : [ {
+				draggable:true,
+				type : 'graph',
+				layout:'force',
+				symbolSize : 50,
+				layout : 'force',
+				data : [ {
+					name : '周三',
+					value : 10,
+					category:1,
+					label : {
+						normal : {
+							show : true,
+							position : 'inside'
+						}
+					},
+				}, {
+					name : '周四',
+					value : 10,
+					category:20,
+					label : {
+						normal : {
+							show : true,
+							position : 'inside'
+						}
+					},
+				}, {
+					name : '周五',
+					value : 10,
+					label : {
+						normal : {
+							show : true,
+							position : 'inside'
+						}
+					},
+				} ,{
+					name : '周一',
+					value : 10,
+					label : {
+						normal : {
+							show : true,
+							position : 'inside'
+						}
+					},
+				},{
+					name : '周二',
+					value : 10,
+					label : {
+						normal : {
+							show : true,
+							position : 'inside'
+						}
+					},
+				},{
+					name : '周六',
+					value : 10,
+					label : {
+						normal : {
+							show : true,
+							position : 'inside'
+						}
+					},
+				},{
+					name : '周日',
+					value : 10,
+					label : {
+						normal : {
+							show : true,
+							position : 'inside'
+						}
+					},
+				}],
+				links : [ {
+					source : 0,
+					target : 1
+				}, {
+					source : 1,
+					target : 2
+				},{
+					source : 2,
+					target : 3
+				},{
+					source : 3,
+					target : 5
+				},{
+					source : 5,
+					target : 6
+				},{
+					source : 6,
+					target : 4
+				} ],
+				roam : true,
+				lineStyle: {
+	                normal: {
+	                    opacity: 0.9,
+	                    width: 2,
+	                    curveness: 0
+	                }
+	            },
+				label : {
+					normal : {
+						position : 'right'
+					}
+				},
+				force : {
+					gravity:0.05,
+					repulsion : 500,
+					edgeLength : 300
+
+				},
+			} ]
+		};
+		// 使用刚指定的配置项和数据显示图表。
+		myChart.hideLoading();
+		myChart.setOption(option);
+	</script>
+</body>
+</html>

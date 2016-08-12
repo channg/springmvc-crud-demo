@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+   <title>&lt;lian&gt; —— 仅仅开始</title>
+   <script type="text/javascript" src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+   <script type="text/javascript" src="/js/layer.js"></script>
+   <link type="text/css" rel="stylesheet" href="/css/all.css">
+   <link type="text/css" rel="stylesheet" href="/css/main.css">
+   <script type="text/javascript">
+   		$(function(){
+   			$(".session_back").click(function(){
+   				$(".session_has_div").fadeOut();
+				$(".to_login").show(100);
+   			})
+   			$("#password_input").focus(function(){
+   	   			$(this).remove();
+   	   			$("#password_div").html("<input id='password_input' name='password' type='password'>")
+   	   			$("#password_input")[0].focus()
+   	   		})
+   			$.post(
+   					"/log/hasSession",{},
+   					function(data){
+   						if(data.flag=="fail"){
+   						}else{
+   							$(".to_login").hide(100);
+   							$(".session_has_div").fadeIn();
+   							$("#session_nickname").html(data.nickname);
+   							$(".session_head_img img").attr("src",data.headimg);
+   						}
+   					},"json"
+   				)
+   			$("#sign_in").click(function(){
+				$.post(
+					"/log/login",
+					{"username":$("#username_input").val(),"password":$("#password_input").val()},
+					function(data){
+						if(data.flag=="fail"){
+							layer.msg('用户名密码错误', {icon: 4});					
+						}else{
+   							$(".to_login").hide(100);
+   							$(".session_has_div").fadeIn();
+   							$("#session_nickname").html(data.nickname);
+   							$(".session_head_img img").attr("src",data.headimg);
+						}
+					},"json"
+				)  				
+   			})	
+   		})
+   		
+   </script>
+</head>
+<body>
+	<script type="text/javascript">
+	</script>
+	
+	<div class="header">
+		<div class="login_div">
+			<p class="my_name_p">&lt;lian&gt;</p>		
+			<p class="desc_p">—— &nbsp;&nbsp;&nbsp;仅仅开始</p>
+			
+			<div class="to_login" >
+			<br/>
+			<br/>
+				<input id="username_input" name="username" type="text" value="请输入用户名" onfocus="javascript:if(this.value=='请输入用户名')this.value='';"><br/><br/>
+				<div id="password_div"><input id="password_input" name="password" type="text" value="请输入密码" ></div><br/>
+				<button  id="sign_in">登录/sign in</button>
+				<button class="sign_up">注册/sign up</button>
+			</div>
+			<div class="session_has_div" style="display: none;">
+					<div class="session_head_img">
+						<img width="100%" height="100%" src=""/>
+					</div>
+					<div class="check_and_login">
+						<span id="session_nickname"></span><br/>
+						<button class="session_login" onclick="location.href='/view/main'">确认登录</button>
+						<button class="session_back">返回登录</button>
+					</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
